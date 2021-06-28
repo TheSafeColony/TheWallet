@@ -1,2 +1,2 @@
 # TheWallet
-Template IOS and Android application from us to you !
+Template IOS and Android Wallet based on Credits Blockchain from us to you !
