@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="TheWallet.Views.keyview"
+             xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Name="keyview_name"
+             BackgroundColor="Transparent">
+  <pages:PopupPage.Animation>
+    <animations:ScaleAnimation 
+      PositionIn="Bottom" 
+      PositionOut="Top"
+      ScaleIn="1.2"
+      ScaleOut="0.8"
+      DurationIn="400"
+      DurationOut="300"
+      EasingIn="SinOut"
+      EasingOut="SinIn"
+      HasBackgroundAnimation="True"/>
+  </pages:PopupPage.Animation>
+
+    <StackLayout VerticalOptions="End" HorizontalOptions="Center" Padding="10, 10, 10, 10" BackgroundColor="Transparent">
+        <Grid VerticalOptions="CenterAndExpand"
+              HorizontalOptions="CenterAndExpand">
+            <pancakeView:PancakeView CornerRadius="20"
+                                         Margin="0,0,0,0"
+                                         BackgroundColor="#eddd05"
+                                         HeightRequest="300">
+                                         
+                
+                 <pancakeView:PancakeView.Border>
+                        <pancakeView:Border Color="#1a243e" Thickness="7"></pancakeView:Border>
+                    </pancakeView:PancakeView.Border>
+                
+
+            
+            <StackLayout>
+                <Label Text="Welcome !"
+               TextColor="FloralWhite"
+                  Margin="0,-40,0,0"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+                  FontSize="Title">
+             </Label>
+            <pancakeView:PancakeView CornerRadius="20"
+                                         Margin="0,10,0,0"
+                                         HeightRequest="60"
+                                         BackgroundColor="Transparent">
+
+
+                 <Editor Placeholder="Enter your Publickey !"
+                                        PlaceholderColor="#1a243e"
+                                        Margin="20,0,0,0"
+                                        AutoSize="TextChanges"
+                                        Text="{Binding Publickey}"
+                                        VerticalOptions="Center"
+                                        FontFamily="safefont"
+                                        TextColor="#1a243e"
+                                        BackgroundColor="Transparent"
+                                        x:Name="TextInput">
+
+                                    
+                                </Editor>
+                 </pancakeView:PancakeView>
+                <pancakeView:PancakeView 
+                                         Margin="20,0,20,0"
+                                         HeightRequest="3"
+                                         BackgroundColor="#1a243e">
+
+                </pancakeView:PancakeView>
+                <pancakeView:PancakeView CornerRadius="20"
+                                         Margin="0,0,0,0"
+                                         HeightRequest="80"
+                                         BackgroundColor="Transparent">
+                            <Editor Placeholder="Enter your Privatekey !"
+                                        PlaceholderColor="#1a243e"
+                                        Margin="20,0,0,0"
+                                        AutoSize="TextChanges"
+                                        Text="{Binding Privatekey}"
+                                        VerticalOptions="Center"
+                                        
+                                        FontFamily="safefont"
+                                        TextColor="#1a243e"
+                                        BackgroundColor="Transparent"
+                                        x:Name="TextInput2">
+
+                                    
+                                </Editor>
+                 </pancakeView:PancakeView>
+                <pancakeView:PancakeView CornerRadius="35"
+                                         Margin="60,20,60,0"
+                                         HeightRequest="60"
+                                         x:Name="button1"
+                                         BackgroundColor="#eddd05">
+                    
+                    <pancakeView:PancakeView.Border>
+                        <pancakeView:Border Color="#1a243e" Thickness="7"></pancakeView:Border>
+                    </pancakeView:PancakeView.Border>
+
+                    <Label Text="OPEN WALLET" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="safefont" />
+
+                    <pancakeView:PancakeView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding openwalletpressed}"/>
+                    </pancakeView:PancakeView.GestureRecognizers>
+
+                 </pancakeView:PancakeView>
+                
+                </StackLayout>
+                
+                </pancakeView:PancakeView>
+        </Grid>
+    </StackLayout>
+
+</pages:PopupPage>

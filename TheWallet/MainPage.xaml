@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#eddd05"
+             xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="TheWallet.MainPage">
+
+    <StackLayout>
+        <Image Source="TheSafeColonyLogo.png" Aspect="AspectFit" Margin="0,100,0,0"/>
+        <pancakeView:PancakeView CornerRadius="60"
+                                         Margin="40,60,40,0"
+                                         HeightRequest="120"
+                                         x:Name="button1"
+                                         BackgroundColor="#eddd05">
+                    
+                    <pancakeView:PancakeView.Border>
+                        <pancakeView:Border Color="#1a243e" Thickness="5"></pancakeView:Border>
+                    </pancakeView:PancakeView.Border>
+
+                    <Label Text="OPEN WALLET" FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="safefont" />
+
+                    <pancakeView:PancakeView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding openwalletpressed}"/>
+                    </pancakeView:PancakeView.GestureRecognizers>
+
+                 </pancakeView:PancakeView>
+
+                <pancakeView:PancakeView CornerRadius="35"
+                                         Margin="80,0,80,0"
+                                         HeightRequest="70"
+                                         BackgroundColor="#eddd05">
+                    
+                    <pancakeView:PancakeView.Border>
+                        <pancakeView:Border Color="#1a243e" Thickness="5"></pancakeView:Border>
+                    </pancakeView:PancakeView.Border>
+                    <Label Text="IMPORT WALLET" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="safefont"/>
+                    
+                 </pancakeView:PancakeView>
+        
+        
+    </StackLayout>
+
+
+</ContentPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#eddd05"
+             xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="TheWallet.TxsPage">
+<Grid>
+    <StackLayout Grid.Row="0" Grid.RowSpan="4">
+        <Image Source="TheSafeColonyLogo.png" Aspect="AspectFit" Margin="0,20,0,0"/>
+        <pancakeView:PancakeView CornerRadius="37"
+                                         Margin="10,20,10,0"
+                                         HeightRequest="250"
+                                         x:Name="button1"
+                                         BackgroundColor="White">
+                    
+                    <pancakeView:PancakeView.Border>
+                        <pancakeView:Border Color="#1a243e" Thickness="5"></pancakeView:Border>
+                    </pancakeView:PancakeView.Border>
+
+            <CollectionView x:Name="TransactionHistoryCollection" Margin="20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HeightRequest="10" Margin="0,10,0,10">
+                            <Label Text="{Binding txsid}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Start" FontFamily="safefont" TextColor="#1a243e" Grid.Column="0"/>
+                            <Label Text="{Binding amount}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Start" FontFamily="safefont" TextColor="#1a243e" Grid.Column="1"/>
+                            <pancakeView:PancakeView CornerRadius="10"
+                                         Margin="0,3,0,3"
+                                         Grid.Column="2"
+                                         BackgroundColor="#1a243e">
+                    
+                           
+                                <Label Text="VIEW TXS" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="safefont" TextColor="#eddd05"/>
+                    
+                            </pancakeView:PancakeView>
+                            
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+                 </pancakeView:PancakeView>
+
+      
+
+        
+        
+    </StackLayout>
+    <StackLayout Grid.Row="4" VerticalOptions="End" Margin="0,0,0,20">
+    <pancakeView:PancakeView CornerRadius="35"
+                                         Margin="120,0,120,20"
+                                         HeightRequest="70"
+                                         x:Name="BackButton"
+                                         BackgroundColor="#eddd05">
+                    
+                    <pancakeView:PancakeView.Border>
+                        <pancakeView:Border Color="#1a243e" Thickness="5"></pancakeView:Border>
+                    </pancakeView:PancakeView.Border>
+                    <Label Text="Back" FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="safefont" TextColor="#1a243e"/>
+                    
+                 </pancakeView:PancakeView>
+    <Label Text="Current Version: 0.001" FontSize="10" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="safefont" TextColor="#1a243e"/>
+        </StackLayout>
+
+    </Grid>
+    
+
+
+</ContentPage>
