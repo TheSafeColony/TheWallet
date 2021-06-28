@@ -14,15 +14,16 @@ namespace TheWallet
     public partial class WalletPage : ContentPage
     {
         
-        public WalletPage()
+        public WalletPage(string PubKey)
         {
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
-                Application.Current.MainPage = new TxsPage();
+                Application.Current.MainPage = new TxsPage(PubKey);
             };
             InitializeComponent();
+            Console.WriteLine(PubKey);
             txsbutton.GestureRecognizers.Add(tapGestureRecognizer);
-            BalanceText.Text = "Current Balance: "+Credits.balance("4SFfA1S2xfA3BdgkTn2tK14yDhLuD11RVz78kqx35jct");
+            BalanceText.Text = "Current Balance: "+Credits.balance(PubKey);
 
 
         }

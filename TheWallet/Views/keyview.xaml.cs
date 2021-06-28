@@ -16,7 +16,7 @@ namespace TheWallet.Views
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
                 //PopupNavigation.Instance.PushAsync(new keyview());
-                Application.Current.MainPage = new WalletPage();
+                Application.Current.MainPage = new WalletPage(TextInput.Text);
                 PopupNavigation.Instance.PopAsync();
             };
             InitializeComponent();
