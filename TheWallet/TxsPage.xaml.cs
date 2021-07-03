@@ -8,13 +8,13 @@ namespace TheWallet
 {
     public partial class TxsPage : ContentPage
     {
-        public TxsPage(string Pubkey)
+        public TxsPage(string Pubkey, string PrivKey)
         {
             
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
                 //PopupNavigation.Instance.PushAsync(new keyview());
-                Application.Current.MainPage = new WalletPage(Pubkey);
+                Application.Current.MainPage = new WalletPage(Pubkey,PrivKey);
                 
             };
             InitializeComponent();

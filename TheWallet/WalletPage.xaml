@@ -46,6 +46,7 @@
         <pancakeView:PancakeView CornerRadius="35"
                                          Margin="120,10,120,0"
                                          HeightRequest="70"
+                                         x:Name="Send_Button"
                                          BackgroundColor="#3fb544">
                     
                     <pancakeView:PancakeView.Border>
